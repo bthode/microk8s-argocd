@@ -23,10 +23,12 @@ spec:
   destination:
     server: "https://kubernetes.default.svc"
     namespace: istio-system
-  patch: |
-    spec:
-      webhooks:
-        - failurePolicy: Ignore
+  ignoreDifferences:
+    - group: admissionregistration.k8s.io
+      kind: ValidatingWebhookConfiguration
+      name: istiod-default-validator
+      jsonPointers:
+        - /webhooks/0/failurePolicy
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
