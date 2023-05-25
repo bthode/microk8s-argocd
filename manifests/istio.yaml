@@ -9,7 +9,7 @@ metadata:
 spec:
   syncPolicy:
     automated:
-      selfHeal: true
+      selfHeal: false
     syncOptions:
       - CreateNamespace=true
   project: default
