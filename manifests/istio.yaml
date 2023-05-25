@@ -26,7 +26,7 @@ spec:
   patch: |
     spec:
       webhooks:
-        - failurePolicy: Fail
+        - failurePolicy: Ignore
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
