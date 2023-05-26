@@ -24,6 +24,7 @@ spec:
     server: "https://kubernetes.default.svc"
     namespace: istio-system
   ignoreDifferences:
+    # https://github.com/argoproj/argo-cd/issues/9323
     - group: admissionregistration.k8s.io
       kind: ValidatingWebhookConfiguration
       name: istiod-default-validator
